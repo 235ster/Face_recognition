@@ -9,10 +9,10 @@ var profile= require('./controllers/profile');
 var knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'master',
-    database : 'face_recognition'
+	connectionString: process.env.DATABASE_URL,
+  	ssl: {
+	    rejectUnauthorized: false
+	  }
   }
 });
 
