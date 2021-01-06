@@ -34,4 +34,4 @@ app.put('/image', (req,res) => {image.handleimage(req,res, knex)})
 
 app.post('/imagedetect', (req,res) => {image.handleFaceDetect(req,res)})
 
-app.listen(3000, () => {console.log('The server is running on port 3000')})
+app.listen(process.env.PORT || 3000, () => {console.log(`The server is running on port ${process.env.PORT}`)})
